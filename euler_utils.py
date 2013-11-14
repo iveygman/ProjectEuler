@@ -3,6 +3,16 @@ from math import sqrt
 phi = (sqrt(5)+1)/2
 
 """
+	Checks if input integer or string is a palindrome, code pulled from http://stackoverflow.com/a/18959976/760318
+"""
+def isPalindrome(n):
+	string = str(n)
+    for i,char in enumerate(string):
+        if char != string[-i-1]:
+            return False
+    return True
+
+"""
 	Pulled from http://stackoverflow.com/a/16996439/760318
 	
 	Returns all prime factors for n
