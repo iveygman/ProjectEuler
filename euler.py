@@ -1,5 +1,6 @@
 import sys
 from prob1 import *
+from prob2 import *
 from prob43 import *
 
 def main():
@@ -13,6 +14,8 @@ def main():
 	
 	if prob == 1:
 		doProb1()
+	elif prob == 2:
+		doProb2()
 	elif prob == 43:
 		doProb43()
 	else:
