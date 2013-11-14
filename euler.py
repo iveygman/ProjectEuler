@@ -1,4 +1,5 @@
 import sys
+from math import factorial
 from euler_utils import *
 from prob1 import *
 from prob2 import *
@@ -23,6 +24,10 @@ def main():
 		print max(prime_factors(600851475143))
 	elif prob == 4:
 		doProb4()
+	elif prob == 20:
+		p = factorial(100)
+		pp=[int(n) for n in list(str(p))]
+		print "Sum is ",sum(pp)
 	elif prob == 22:
 		doProb22()
 	elif prob == 43:

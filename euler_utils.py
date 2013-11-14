@@ -7,10 +7,10 @@ phi = (sqrt(5)+1)/2
 """
 def isPalindrome(n):
 	string = str(n)
-    for i,char in enumerate(string):
-        if char != string[-i-1]:
-            return False
-    return True
+	for i,char in enumerate(string):
+		if char != string[-i-1]:
+			return False
+	return True
 
 """
 	Pulled from http://stackoverflow.com/a/16996439/760318
