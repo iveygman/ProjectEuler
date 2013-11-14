@@ -1,4 +1,5 @@
 import sys
+from euler_utils import *
 from prob1 import *
 from prob2 import *
 from prob43 import *
@@ -16,6 +17,8 @@ def main():
 		doProb1()
 	elif prob == 2:
 		doProb2()
+	elif prob == 3:
+		print max(prime_factors(600851475143))
 	elif prob == 43:
 		doProb43()
 	else:
