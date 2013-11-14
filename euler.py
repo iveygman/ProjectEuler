@@ -33,6 +33,8 @@ def main():
 		print "Sum is ",sum(pp)
 	elif prob == 22:
 		doProb22()
+	elif prob == 24:
+		doProb24()
 	elif prob == 43:
 		doProb43()
 	else:

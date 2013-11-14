@@ -49,5 +49,18 @@ def doProb43(verbose=True):
 		print list
 	print "Result: ",sum(list)
 
-if __name__ == "__main__":
-	doProb43()		
+"""
+A permutation is an ordered arrangement of objects. For example, 3124 is one possible permutation of the 
+digits 1, 2, 3 and 4. If all of the permutations are listed numerically or alphabetically, we call it lexicographic order. 
+The lexicographic permutations of 0, 1 and 2 are: 012   021   102   120   201   210
+
+What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
+
+
+Solution:
+	Use itertools with the base string '0123456789' and then sort the results, taking the millionth element
+"""
+def doProb24():
+	_nums = [''.join(p) for p in permutations('0123456789')]
+	nums = sorted(_nums)
+	print nums[999999]

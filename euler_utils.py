@@ -3,6 +3,20 @@ from math import sqrt
 phi = (sqrt(5)+1)/2
 
 """
+	Returns the Collatz sequence for n
+"""
+def collatz(n):
+	if n <= 0:
+		return None
+	else:
+		seq = []
+		while n > 1:
+			seq.append(n)
+			if (n%2):	n = 3*n+1
+			else:		n /= 2
+		return seq
+
+"""
 	Checks if input integer or string is a palindrome, code pulled from http://stackoverflow.com/a/18959976/760318
 """
 def isPalindrome(n):
