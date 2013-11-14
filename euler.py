@@ -1,3 +1,4 @@
+from prob1 import *
 from prob43 import *
 
 def main():
