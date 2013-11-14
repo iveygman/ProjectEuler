@@ -21,12 +21,25 @@ def main():
 		doProb1()
 	elif prob == 2:
 		doProb2()
+	"""
+	The prime factors of 13195 are 5, 7, 13 and 29.
+
+	What is the largest prime factor of the number 600851475143 ?
+	"""
 	elif prob == 3:
 		print max(prime_factors(600851475143))
 	elif prob == 4:
 		doProb4()
 	elif prob == 14:
 		doProb14()
+	"""
+	n! means n × (n − 1) × ... × 3 × 2 × 1
+
+	For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,
+	and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
+
+	Find the sum of the digits in the number 100!
+	"""
 	elif prob == 20:
 		p = factorial(100)
 		pp=[int(n) for n in list(str(p))]
