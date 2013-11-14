@@ -23,8 +23,10 @@ def checkSubstringDivisibility(nums):
 		subs = []
 		factors = [2, 3, 5, 7, 11, 13, 17]
 		ok = True
+		# first optimization: skip if 4th digit not even
 		if (int(num[3]) % 2 != 0):
 			continue
+		# second optimization: skip if 6th digit not 5 or 0
 		if not (num[5] == '5' or num[5] == '0'):
 			continue
 		for k in xrange(1,8):
@@ -36,7 +38,6 @@ def checkSubstringDivisibility(nums):
 				break
 		if ok:
 			list.append(int(num))
-#			print "Found ",num
 	
 	return list
 				
