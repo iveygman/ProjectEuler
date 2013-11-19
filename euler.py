@@ -7,6 +7,7 @@ from prob4 import *
 from prob8 import *
 from prob14 import *
 from prob22 import *
+from prob23 import *
 from prob43 import *
 
 def main():
@@ -36,6 +37,8 @@ def main():
 		print "Sum is ",sum(pp)
 	elif prob == 22:
 		doProb22()
+	elif prob == 23:
+		doProb23()
 	elif prob == 24:
 		doProb24()
 	elif prob == 43:
