@@ -1,14 +1,16 @@
 import sys
 from math import factorial
 from euler_utils import *
-from prob1 import *
-from prob2 import *
-from prob4 import *
-from prob8 import *
-from prob14 import *
-from prob22 import *
-from prob23 import *
-from prob43 import *
+from prob00x import *
+from prob01x import *
+from prob02x import *
+from prob03x import *
+from prob04x import *
+from prob05x import *
+from prob06x import *
+from prob07x import *
+from prob08x import *
+from prob09x import *
 
 def main():
 
