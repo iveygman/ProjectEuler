@@ -1,4 +1,5 @@
 from itertools import permutations
+from euler_utils import prod
 
 # makes a list of all 0 - 9 pandigital numbers in string format
 #	We drop the ones that begin with a 0 because they technically don't include all digits
@@ -40,7 +41,37 @@ def checkSubstringDivisibility(nums):
 			list.append(int(num))
 	
 	return list
-				
+
+"""
+Problem 40 Statement:
+	An irrational decimal fraction is created by concatenating the positive integers:
+
+		0.123456789101112131415161718192021...
+
+	It can be seen that the 12th digit of the fractional part is 1.
+
+	If dn represents the nth digit of the fractional part, find the value of the following expression.
+
+		d1 x d10 x d100 x d1000 x d10000 x d100000 x d1000000
+		
+Solution:
+	Concatenate integers until the resultant string is 1000000 characters in length, then take the 
+	appropriate digits and multiply. You don't actually need to make a fraction
+"""
+def doProb40():
+	
+	digits = ''
+	k = 1
+	indices = [1,10,100,1000,10000,100000,1000000]
+	while len(digits) < indices[-1]:
+		digits += str(k)
+		k += 1
+	
+	digits = [int( digits[k-1] ) for k in indices]
+	print digits
+	print "Prod is",prod(digits)
+
+
 """
 Problem 43 Statement:
 

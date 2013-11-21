@@ -1,6 +1,13 @@
 from math import sqrt
+from operator import mul
 
 phi = (sqrt(5)+1)/2
+
+"""
+	Returns the product of every element in some_list
+"""
+def prod(some_list):
+	return reduce(lambda x, y: x * y, some_list)
 
 def generateSpiral(dim):
 	if dim % 2 == 0 or dim < 3:
