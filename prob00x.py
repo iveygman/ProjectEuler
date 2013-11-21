@@ -1,4 +1,4 @@
-from euler_utils import isPalindrome, fib
+from euler_utils import isPalindrome, fib, prime_factors
 from operator import mul
 
 """
@@ -42,6 +42,9 @@ def doProb2():
 		n += 1
 	
 	print sum(nums)
+
+def doProb3():
+	print max(prime_factors(600851475143))
 
 """
 Problem 4 Statement:
