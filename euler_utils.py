@@ -2,6 +2,19 @@ from math import sqrt
 
 phi = (sqrt(5)+1)/2
 
+def generateSpiral(dim):
+	if dim % 2 == 0 or dim < 3:
+		print "Error, generateSpiral() must take an odd-numbered dimension 3 or greater"
+		return None
+	spiral = [[None for x in xrange(dim)] for x in xrange(dim)] 
+	
+	x = int(dim/2)	# initial x and y
+	y = x			
+	n = 1
+	
+	spiral[x][y] = n
+	x
+
 """
 	Returns the Collatz sequence for n
 """
