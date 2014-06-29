@@ -14,14 +14,14 @@ from prob09x import *
 
 def main():
 
-	argc = len(sys.argv)
-	prob = 0
-	if (argc > 1):
-		prob = int(sys.argv[1])
-	else:
-		prob = raw_input("Enter problem number: ")
+    argc = len(sys.argv)
+    prob = 0
+    if (argc > 1):
+        prob = int(sys.argv[1])
+    else:
+        prob = raw_input("Enter problem number: ")
 
-	eval('doProb'+str(prob)+'()')
-	
+    eval('doProb'+str(prob)+'()')
+    
 if __name__ == "__main__":
-	main()
+    main()
