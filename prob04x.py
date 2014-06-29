@@ -1,13 +1,18 @@
 from itertools import permutations
-from euler_utils import prod
+from euler_utils import prod,isPrime
 
 # makes a list of all 0 - 9 pandigital numbers in string format
 #	We drop the ones that begin with a 0 because they technically don't include all digits
 #	0 through 9 exactly once
-def generatePandigitals():
+def generatePandigitals(digits=9):
+	
+	assert digits>0 and digits<=9,"Gotta have between 1 and 10 digits in total!"
+	s = ''
+	for k in range(0,digits+1):
+		s += str(k)
+
 	# don't add one that starts with a 0
-	_nums = [''.join(p) for p in permutations('0123456789')]
-	nums = [n for n in _nums if n[0] != '0'];	
+	nums = [n for n in [''.join(p) for p in permutations(s)] if n[0] != '0'];	
 	return nums;
 	
 """
@@ -59,7 +64,7 @@ Solution:
 	appropriate digits and multiply. You don't actually need to make a fraction
 """
 def doProb40():
-	
+
 	digits = ''
 	k = 1
 	indices = [1,10,100,1000,10000,100000,1000000]
@@ -71,7 +76,32 @@ def doProb40():
 	print digits
 	print "Prod is",prod(digits)
 
+"""
+Problem 41 Statement:
+	We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n 
+	exactly once. For example, 2143 is a 4-digit pandigital and is also prime.
 
+	What is the largest n-digit pandigital prime that exists?
+"""
+def doProb41():
+
+	# start from the top and work down
+
+	largest = -1
+	foundAPrime = False
+	for n in range(9,1,-1):
+		nums = generatePandigitals(n)
+		for num in nums:
+			nnum = int(num)
+			print "Testing",nnum,"for primality"
+			if isPrime(nnum):
+				print "Is prime!"
+				if nnum > largest:
+					largest = nnum
+		if foundAPrime:	break
+
+	print largest," is the largest pandigital prime"
+	
 """
 Problem 43 Statement:
 

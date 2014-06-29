@@ -1,5 +1,6 @@
 from math import sqrt
 from operator import mul
+from collections import Counter
 
 phi = (sqrt(5)+1)/2
 
@@ -8,6 +9,41 @@ phi = (sqrt(5)+1)/2
 """
 def prod(some_list):
 	return reduce(lambda x, y: x * y, some_list)
+
+"""
+	returns the most common element in the list.
+	optionally, can return the 2nd, 3rd, 4th, etc most common
+"""
+def mode(some_list,commonality=1):
+	l = Counter(some_list)
+	return l.most_common(commonality)[-1]
+
+"""
+	Tests whether or not a number is prime. If it's in the list, it's already prime.
+	Otherwise, check if it's prime the long way ONCE, then add it to the list
+"""
+def isPrime(num):
+
+	inf = open("primes.txt","r")
+	s = inf.read()
+	inf.close()
+	primes = [ ss for ss in s.replace('\n',',').split(',') if len(ss)>0 ]
+
+	if num in primes:	return True
+	
+	# otherwise check if prime the long way
+	lim = int(sqrt(num))+2
+	for k in range(2,lim):
+		if num % k == 0:
+			return False
+	
+	primes.append(num)
+	out = open("primes.txt","w")
+	for n in primes:
+		out.write(str(n)+'\n')
+	out.close()
+	
+	return True
 
 def generateSpiral(dim):
 	if dim % 2 == 0 or dim < 3:

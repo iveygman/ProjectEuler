@@ -21,10 +21,7 @@ def main():
 	else:
 		prob = raw_input("Enter problem number: ")
 
-	try:
-		eval('doProb'+str(prob)+'()')
-	except:
-		print "Unknown problem"
+	eval('doProb'+str(prob)+'()')
 	
 if __name__ == "__main__":
 	main()
