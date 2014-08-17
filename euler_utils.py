@@ -83,6 +83,12 @@ def isPalindrome(n):
     return True
 
 """
+    Generates a palindrome from the input
+"""
+def makePalindrome(x):
+    return str(x)[::-1]
+
+"""
     Finds all proper divisors of n, where a proper divisor of n is k such that n % k == 0
     
     Restricted to positive n for now
@@ -138,3 +144,15 @@ def prime_factors(n):
 def fib(n):
     global phi
     return int( ( phi ** n - (-phi) ** -n ) / sqrt(5) )
+
+"""
+    Decrypts the input sequence (list of numbers) using a key (another list of numbers). The key and sequence can
+    presumably be ASCII characters, but that translation should be done outside the scope of this function
+"""
+def xor_decrypt(sequence, key):
+    key_mod = len(key)
+    out_seq = [0]*len(sequence)
+    for k, s in enumerate(sequence):
+        out_seq[k] = s ^ key[k % key_mod]
+    return out_seq    
+
